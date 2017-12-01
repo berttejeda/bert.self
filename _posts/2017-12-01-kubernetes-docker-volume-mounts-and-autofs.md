@@ -1,9 +1,17 @@
 ---
-post_title: 'Kubernetes, Docker volume mounts, and autofs'
+ID: 892
+post_title: >
+  Kubernetes, Docker volume mounts, and
+  autofs
+author: Bert Tejeda
+post_excerpt: ""
 layout: post
+permalink: >
+  http://bertdotself.com/kubernetes-docker-volume-mounts-and-autofs/
 published: true
+post_date: 2017-12-01 17:11:42
 ---
-	Environment details:
+Environment details:
 
 		Virtual Machine running docker engine (docker-engine)
 		OS:Oracle Enterprise Linux 7.x
@@ -17,7 +25,7 @@ published: true
         Hmm wtf ...
         A fellow admin suggested I check for docker mapped volumes that point to /home
         Here's the command I used to query for that:
-			sudo docker ps --filter volume=/home --format "table {{.Names}}\t{{.ID}}\t{{.Mounts}}"
+			sudo docker ps --filter volume=/home --format "table {{.Names}}t{{.ID}}t{{.Mounts}}"
 		Boom, looks like the kubernetes weaver container is using that mapping:
 			NAMES                                                                          CONTAINER ID        MOUNTS
 			k8s_weave_weave-net-s7kl5_kube-system_8343d6a6-d608-11e7-838f-005056b5384e_7   ecfa204283d3        /opt,/run/xtables.lo,/var/lib/kubele,/lib/modules,/var/lib/kubele,/var/lib/weave,/home,/etc,/var/lib/dbus
