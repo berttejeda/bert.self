@@ -53,7 +53,7 @@ And, depending on how you map a volume to a docker container, you might conflict
 
 For insight into a similar issue, see:
 
-- Issue with AutoFS mounts and docker 1.11.2: https://github.com/moby/moby/issues/24303
+- Issue with AutoFS mounts and docker 1.11.2: [](https://github.com/moby/moby/issues/24303)
 
 According to the above issue description, the problem we're seeing might be fixed by adjusting the bind propagation for the volume mount in question, 
 see: https://docs.docker.com/engine/admin/volumes/bind-mounts/#choosing-the--v-or-mount-flag
