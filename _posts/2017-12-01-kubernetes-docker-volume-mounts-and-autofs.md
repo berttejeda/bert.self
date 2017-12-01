@@ -35,7 +35,7 @@ A fellow admin suggested I check for docker mapped volumes that point to /home
 
 Here's the command I used to query for that:
 
-`sudo docker ps --filter volume=/opt --format "Name:\n\t{{.Names}}\nID:\n\t{{.ID}}\nMounts:\n\t{{.Mounts}}\n"`
+`sudo docker ps --filter volume=/opt --format "Name:\\n\\t{{.Names}}\\nID:\\n\\t{{.ID}}\\nMounts:\\n\\t{{.Mounts}}\\n"`
 
 Boom, looks like the kubernetes weaver container is using that mapping:
 	```
@@ -44,7 +44,8 @@ Boom, looks like the kubernetes weaver container is using that mapping:
   ID:
           dc95801e4442
   Mounts:
-          /opt/kubernetes,/lib/modules,/run/xtables.lo,/var/lib/kubele,/var/lib/weave,/etc,/var/lib/dbus,/var/lib/kubele,/opt
+          /opt/kubernetes,/lib/modules,/run/xtables.lo, \
+          /var/lib/kubele,/var/lib/weave,/etc,/var/lib/dbus,/var/lib/kubele,/opt
 	```
 
 Ok, so why would a docker volume mapped to `/home` induce such a problem?
