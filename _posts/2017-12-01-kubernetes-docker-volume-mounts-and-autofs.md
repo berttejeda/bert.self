@@ -22,8 +22,10 @@ post_date: 2017-12-01 17:11:42
 Unable to login to docker host using public key authentication
 Able to login to the host using my password 
 Once at the console, I observed an error similar to:
+	```
 	Could not chdir to home directory /home/myuser: Too many levels of symbolic links
     -bash: /home/myuser/.bash_profile: Too many levels of symbolic links
+    ```
 
 Hmm wtf ...
 
