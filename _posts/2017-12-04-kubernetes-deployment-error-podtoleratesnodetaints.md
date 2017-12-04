@@ -4,8 +4,10 @@ post_title: 'Kubernetes Deployment Error &#8211; PodToleratesNodeTaints'
 author: Bert Tejeda
 post_excerpt: ""
 layout: post
-permalink: http://bertdotself.com/?p=900
-published: false
+permalink: >
+  http://bertdotself.com/kubernetes-deployment-error-podtoleratesnodetaints/
+published: true
+post_date: 2017-12-04 21:36:54
 ---
 # Scenario You have a single node (master) kubernetes deployment and you want to schedule standard pods. The master name is your hostname: 
 
