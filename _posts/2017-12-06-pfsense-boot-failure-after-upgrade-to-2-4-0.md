@@ -1,6 +1,8 @@
 ---
 ID: 903
-post_title: 'pfsense &#8211; Boot failure after upgrade to 2.4.0'
+post_title: >
+  pfsense – Boot failure after upgrade
+  to 2.4.0
 author: Bert Tejeda
 post_excerpt: ""
 layout: post
