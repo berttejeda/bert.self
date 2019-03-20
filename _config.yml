@@ -1,1 +1,33 @@
-theme: jekyll-theme-slate
+#
+# This file contains configuration flags to customize your site
+#
+
+# Name of your site (displayed in the header)
+name: Bert Tejeda
+
+# Short bio or description (displayed in the header)
+description: DevOps Guy From Pennsylvania
+
+# URL of your avatar or profile pic (you could use your GitHub profile pic)
+avatar: https://avatars0.githubusercontent.com/u/7783487?s=400&u=1e8b2a156a2e5c25166d275c5d5f254ecc69867c&v=4
+#
+# Flags below are optional
+#
+
+# Use the following plug-ins
+gems:
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+
+# Exclude these files from your production _site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+
+plugins:
+  - jekyll-include-cache
+
+remote_theme: "mmistakes/minimal-mistakes@4.15.2"
