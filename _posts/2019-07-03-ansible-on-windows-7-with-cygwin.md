@@ -16,33 +16,35 @@ You want to install ansible on Windows 7 x64
 
 ### Environment Information
 
-Output from `powershell -NoProfile [System.Environment]::OSVersion.Version`
-<pre>OS: Windows 7 x64
-Major  Minor  Build  Revision
------  -----  -----  --------
-6      1      7601   65536
-</pre>
-<pre>
-Cygwin Version: 3.0.7(0.338/5/3)
-</pre>
-Ansible Environment: 
-<pre>
-ansible 2.9.0.dev0
-  config file = None
-  configured module search path = [u'/home/${USERNAME}/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
-  ansible python module location = /usr/lib/python2.7/site-packages/ansible-2.9.0.dev0-py2.7.egg/ansible
-  executable location = /opt/ansible/bin/ansible
-  python version = 2.7.16 (default, Mar 20 2019, 12:15:19) [GCC 7.4.0]
-</pre>
+- Windows OS:
+```
+    powershell -NoProfile [System.Environment]::OSVersion.Version
+    OS: Windows 7 x64
+    Major  Minor  Build  Revision
+    -----  -----  -----  --------
+    6      1      7601   65536
+```
+- Cygwin Version (post-installation): 3.0.7(0.338/5/3)
+- Ansible Environment (post-installation): 
+```
+  ansible --version
+  ansible 2.9.0.dev0
+    config file = None
+    configured module search path = [u'/home/${USERNAME}/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+    ansible python module location = /usr/lib/python2.7/site-packages/ansible-2.9.0.dev0-py2.7.egg/ansible
+    executable location = /opt/ansible/bin/ansible
+    python version = 2.7.16 (default, Mar 20 2019, 12:15:19) [GCC 7.4.0]
+```
 
 ### Instructions
 
 #### Install cygwin
 
-- Download cygwin64 from https://www.cygwin.com/setup-x86_64.exe
-- Move _setup-x86_64.exe_ to C:\tools\cygwin
+- Download cygwin64 from [https://www.cygwin.com/setup-x86_64.exe](https://www.cygwin.com/setup-x86_64.exe)
+- Create the installation folder (I'm using **C:\tools\cygwin**)
+- Move _setup-x86_64.exe_ to **C:\tools\cygwin**
 - Click _setup-x86_64.exe_
-- Make sure to set the install folder and package folder to C:\tools\cygwin
+- Make sure to set the install folder and package folder to **C:\tools\cygwin**
 - Go through the setup instructions, and when at the package selection screen,
 - Only install wget
 - The cygwin64 core package installations will take time, so busy yourself with something else in the meantime :)
@@ -50,7 +52,7 @@ ansible 2.9.0.dev0
 
 #### Install python and its dependencies
 
-- From the installation folder (C:\tools\cygwin), click Cygwin.bat
+- From the installation folder (**C:\tools\cygwin**), click Cygwin.bat
 - This will initialize your cygwin environment and start the bash interactive terminal
 - Adjust shell environment:
   ```
@@ -121,16 +123,16 @@ Instructions:
   - Click the + sign at the bottom of 'Predefined tasks (command groups)'
     - For 'Task Parameters', enter:
     ```
-    /icon "C:\tools\cygwin\Cygwin.ico"
+    /icon "**C:\tools\cygwin**\Cygwin.ico"
     ```
     - Paste this into the empty text area at the bottom right:<br />
       ```
-      -cur_console:t:ansible "C:\tools\cygwin\bin\bash.exe" --login -i
+      -cur_console:t:ansible "**C:\tools\cygwin**\bin\bash.exe" --login -i
       ```
 
 #### Notes
   
-Final folder dize for `C:\tools\cygwin`: `1.24 GB`
+Final folder dize for **C:\tools\cygwin**: **1.24 GB**
 
 That's a big-ass folder for lil' ol' ansible ...
 
@@ -152,8 +154,8 @@ More digging I must do.
 
 #### References
 
-- Google Search > ansible on windows 7 - https://lmgtfy.com/?q=ansible+on+windows+7
-- Google Search > "apt-cyg" "ansible" "bat" - https://lmgtfy.com/?q=%22apt-cyg%22+%22ansible%22+%22bat%22
-- pip - Installing Ansible Python package on Windows - Stack Overflow - https://stackoverflow.com/questions/51167099/installing-ansible-python-package-on-windows
-- Running Ansible within Windows (Jeff Geerling) - https://www.jeffgeerling.com/blog/running-ansible-within-windows
-- How to install Ansible to Windows - https://gist.github.com/eyasuyuki/d9c1dc96a9b8356164e5
+- Google Search > ansible on windows 7 - [https://lmgtfy.com/?q=ansible+on+windows+7](https://lmgtfy.com/?q=ansible+on+windows+7)
+- Google Search > "apt-cyg" "ansible" "bat" - [https://lmgtfy.com/?q=%22apt-cyg%22+%22ansible%22+%22bat%22](https://lmgtfy.com/?q=%22apt-cyg%22+%22ansible%22+%22bat%22)
+- pip - Installing Ansible Python package on Windows - Stack Overflow - [https://stackoverflow.com/questions/51167099/installing-ansible-python-package-on-windows](https://stackoverflow.com/questions/51167099/installing-ansible-python-package-on-windows)
+- Running Ansible within Windows (Jeff Geerling) - [https://www.jeffgeerling.com/blog/running-ansible-within-windows](https://www.jeffgeerling.com/blog/running-ansible-within-windows)
+- How to install Ansible to Windows - [https://gist.github.com/eyasuyuki/d9c1dc96a9b8356164e5](https://gist.github.com/eyasuyuki/d9c1dc96a9b8356164e5)
