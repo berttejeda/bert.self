@@ -131,3 +131,11 @@ So yeah ...
 ### Learning Points
 
 Ansible can indeed run on Windows 7 x64, but it's not without pain.
+
+### References
+
+- ansible on windows 7 - Google Search
+- [pip - Installing Ansible Python package on Windows - Stack Overflow](https://stackoverflow.com/questions/51167099/installing-ansible-python-package-on-windows)
+- [Running Ansible within Windows | Jeff Geerling](https://www.jeffgeerling.com/blog/running-ansible-within-windows)
+- [How to install Ansible to Windows](https://gist.github.com/eyasuyuki/d9c1dc96a9b8356164e5)
+- "apt-cyg" "ansible" "bat" - Google Search
