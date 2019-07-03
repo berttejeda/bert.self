@@ -102,6 +102,14 @@ Your cygwin environment should be good for installing ansible, so let's get to i
 - Troubleshooting<br />
   If problems, use a search engine to look up any errors, start over, rinse/repeat  
 
+#### Test Run
+
+The below worked!
+
+`ansible --connection=local localhost, -m setup -a 'filter=ansible_host*'`
+
+### Appendix
+
 #### Setup cmder
 
 My terminal emulator of choice on Windows is [Cmder](https://cmder.net/)
@@ -120,7 +128,7 @@ Instructions:
       -cur_console:t:ansible "C:\tools\cygwin\bin\bash.exe" --login -i
       ```
 
-### Notes
+#### Notes
   
 Final folder dize for `C:\tools\cygwin`: `1.24 GB`
 
@@ -128,11 +136,21 @@ That's a big-ass folder for lil' ol' ansible ...
 
 So yeah ...
 
-### Learning Points
+#### Learning Points
 
-Ansible can indeed run on Windows 7 x64, but it's not without pain.
+Ansible can (at least in theory) run on Windows 7 x64, but it's not without pain *AND* it's not without problems.
 
-### References
+I tested the uri module and was greeted with an error:
+
+```
+The following modules failed to execute: setup
+  setup: MODULE FAILURE
+See stdout/stderr for the exact error
+```
+
+More digging I must do.
+
+#### References
 
 - ansible on windows 7 - Google Search
 - [pip - Installing Ansible Python package on Windows - Stack Overflow](https://stackoverflow.com/questions/51167099/installing-ansible-python-package-on-windows)
