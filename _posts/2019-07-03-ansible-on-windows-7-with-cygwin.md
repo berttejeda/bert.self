@@ -16,7 +16,7 @@ You want to install ansible on Windows 7 x64
 
 ### Environment Information
 
-Output from `powershell [System.Environment]::OSVersion.Version`
+Output from `powershell -NoProfile [System.Environment]::OSVersion.Version`
 <pre>OS: Windows 7 x64
 Major  Minor  Build  Revision
 -----  -----  -----  --------
