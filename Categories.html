@@ -1,0 +1,27 @@
+---
+layout: home
+title: Categories
+permalink: /categories/
+---
+
+{% for cat in site.categories %}
+
+    <h3>{{ cat[0] }}</h3>
+
+    <div class="posts">
+
+        {% for post in site.posts %}
+
+            {% if post.category == cat[0] %}
+
+                {% include excerpt-box.html post=post %}
+
+            {% endif %}
+
+        {% endfor %}
+
+    </div>
+
+    <hr>
+
+{% endfor %}

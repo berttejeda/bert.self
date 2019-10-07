@@ -1,13 +1,71 @@
----
-layout: archive
----
+<!DOCTYPE html>
+<html>
+<head>
 
-{{ content }}
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+    {% include meta.html %}
 
-{% for post in paginator.posts %}
-  {% include archive-single.html %}
-{% endfor %}
+    {% include scripts.html %}
 
-{% include paginator.html %}
+</head>
+
+<body>
+
+<div class="home">
+    <header>
+
+        <div class="site-info">
+
+            <a class="site-name" href="{{ site.baseurl }}/">{{ site.name }}</a>
+
+            <div class="site-description">{{ site.description }}</div>
+
+        </div>
+
+        <div class="site-avatar">
+            <a class="site-name" href="{{ site.baseurl }}/">
+                <img class="site-avatar" src="{{ site.baseurl }}{{ site.avatar }}"/>
+            </a>
+        </div>
+
+    </header>
+</div>
+
+
+<div class="container home">
+
+    <nav>
+        <ul>
+            {% for p in site.pages %}
+                {% if p.layout == 'home' %}
+                    {% if p.title == page.title %}
+                        <li class="current"><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
+                    {% else %}
+                        <li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+
+    {{ content }}
+
+</div>
+
+
+<div class="wrapper-footer">
+    <footer class="footer">
+        <!--{% include svg-icons.html %}-->
+    </footer>
+</div>
+
+
+{% include analytics.html %}
+
+<!-- Adding disqus comment count links -->
+<script id="dsq-count-scr" src="https://{{ site.disqus }}.disqus.com/count.js" async></script>
+<!-- Adding disqus comment count links -->
+
+</body>
+</html>

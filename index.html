@@ -1,4 +1,14 @@
 ---
 layout: home
-author_profile: true
+title: Posts
 ---
+
+<div class="posts">
+
+    {% for post in site.posts %}
+
+        {% include excerpt-box.html post=post %}
+
+    {% endfor %}
+
+</div>

@@ -1,0 +1,39 @@
+<header>
+
+    <a href="{{ site.baseurl }}/" class="site-avatar"><img class="site-avatar" src="{{site.baseurl}}{{ site.avatar }}"/></a>
+
+    <div class="site-info">
+
+        <a class="site-name" href="{{ site.baseurl }}/">
+            {{ site.name }}
+        </a>
+
+        <div class="site-description">
+            {{ site.description }}
+        </div>
+
+
+        {% if include.full_text %}
+            {% assign full_text = include.full_text %}
+        {% else %}
+            {% assign full_text = content %}
+        {% endif %}
+
+        {% assign num_words = full_text | strip_html | number_of_words %}
+        {% assign WPM = 180 %}
+
+        {% if num_words < WPM %}
+            {% assign reading_time = "1" %}
+        {% else %}
+            {% assign reading_time = num_words | divided_by:WPM | round %}
+        {% endif %}
+
+        {% assign reading_time = reading_time | append: " min read" %}
+
+        <div class="post-date-time">
+            {{ include.date | date: "%b %e, %Y" }} &#160;<b>&#183;</b>&#160; {{ reading_time }}
+        </div>
+
+    </div>
+
+</header>
