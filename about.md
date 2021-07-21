@@ -6,7 +6,7 @@ permalink: /about/
 
 Howdy. My name is Bert. I am a dedicated father and husband, and I'm sure I'm a pretty regular guy (for now).
 
-My trade is tech, with a specialty in Systems Administration, Orechestration, and Automation. I absolutely love DevOps and am an avid proponent of programming languages such as PowerShell, Python, Bash, and Ruby. I also enjoy working with infrastructure orchestration/platform tools like Ansible and Puppet. Microservices and Virtualization? Oh yeah:
+My trade is tech, with a specialty in Systems Administration, Orchestration, and Automation. I absolutely love DevOps and am an avid proponent of programming languages such as PowerShell, Python, Bash, and Ruby. I also enjoy working with infrastructure orchestration/platform tools like Ansible and Puppet. Microservices and Virtualization? Oh yeah:
 - Vagrant
 - Kubernetes
 - Docker
