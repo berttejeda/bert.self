@@ -1,0 +1,13 @@
+mkdocs
+markdown-blockdiag
+markdown-include
+mkdocs-diagrams
+mkdocs-include-markdown-plugin
+mkdocs-markmap
+mkdocs-windmill
+mkdocs-macros-plugin
+mkdocs-same-dir
+mkdocs-mermaid2-plugin
+mkdocs-redirects # https://github.com/datarobot/mkdocs-redirects
+pygments
+pymdown-extensions
