@@ -20,9 +20,7 @@ extra:
 ### Build settings ###
 
 theme:
-  name: 'material'
-  search_index_only: true
-  include_search_page: true
+  name: material
   palette:
   - scheme: default
     toggle:
@@ -32,11 +30,13 @@ theme:
     toggle:
       icon: material/weather-night
       name: Switch to dark mode
+  #favicon: img/favicon.ico
+  search_index_only: true
+  include_search_page: true
   features:
     - search.suggest
     - search.highlight
     #- navigation.sections
-    - navigation.tabs
     #- content.code.annotate      
   logo: docs/theme/images/logo.jpg
   icon:
