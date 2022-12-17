@@ -13,6 +13,27 @@ DevOps methodoligies, which includes
 Desired State and Configuration Management, 
 among other buzzwordy terms.
 
+## My passions
+
+- Technology
+- Education
+- Good, solid, parenting
+- Child welfare - Become a Big at [Big Brothers Big Sisters](https://www.bbbs.org/)!
+- Saving the planet by **Composting**! - See my notes [here](https://github.com/berttejeda/bert.composting) 
+
+## My work
+
+- 🔭 Currently working on [bert.bill](https://github.com/berttejeda/bert.bill) (personal project for helping others learn new technologies).
+- 🌱 Currently honing my skils in:
+  - [React](https://reactjs.org/docs/getting-started.html)
+  - [Terraform](https://www.terraform.io/)
+  - [ProxMox](https://www.terraform.io/)
+  - [AWS](https://docs.aws.amazon.com/)
+
+Feel free to peruse the rest of my free and opensource projects on [github](https://github.com/berttejeda).
+
+You can also reach me on [LinkedIn](https://www.linkedin.com/in/engelberttejeda/).
+
 ## My tech stack
 
 I absolutely love [DevOps](https://en.wikipedia.org/wiki/DevOps) 
@@ -29,8 +50,7 @@ but I can get pretty crafty on Windows with
 [PowerShell](https://docs.microsoft.com/en-us/powershell/) and even
 [BATCH](https://en.wikipedia.org/wiki/Batch_file).
 
-
-My Web skills includes:
+My Web skills include:
 
 - Frontend Development
     - [React](https://reactjs.org/), 
