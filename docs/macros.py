@@ -110,7 +110,7 @@ def declare_variables(variables, macro):
         if not os.path.exists(fn):
             return f"""<b>File not found: {fn}</b>"""
         with open(fn, "r") as f:
-            return f.read()
+            return f.read().replace('newtab+', '')
 
 def is_absolute(url):
     return bool(urlparse(url).netloc)
