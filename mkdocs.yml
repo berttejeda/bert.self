@@ -128,15 +128,33 @@ nav:
    #    - bash: docs/topics/automation/bash.md
    #    - python: docs/topics/automation/python.md
    - Ansible:
+      - lessons:
+        - lesson-01: docs/topics/ansible/lesson-01/lesson.md
       - windows: 
         - Portable Ansible Installation on Windows 7 using Cygwin: docs/topics/ansible/windows/ansible-on-windows-7-with-cygwin.md
-   - pfSense:
-      - troubleshooting: 
-        - Boot failure after upgrading pfsense to 2.4.0: docs/topics/pfsense/troubleshooting/boot-failure-after-upgrade-to-2-4-0.md
+   - Docker:
+      - lessons:
+        - lesson-01: docs/topics/docker/lesson-01/lesson.md    
+        - lesson-02: docs/topics/docker/lesson-02/lesson.md    
+        - lesson-03: docs/topics/docker/lesson-03/lesson.md    
+        - lesson-04: docs/topics/docker/lesson-04/lesson.md
+   - Crossplane:
+      - lessons:
+        - lesson-01: docs/topics/crossplane/lesson-01/lesson.md
+        - lesson-02: docs/topics/crossplane/lesson-02/lesson.md
    - Kubernetes:
+      - lessons:
+        - lesson-01: docs/topics/kubernetes/lesson-01/lesson.md
+        - lesson-02: docs/topics/kubernetes/lesson-02/lesson.md        
       - troubleshooting: 
         - Docker Volume Mounts And Autofs: docs/topics/kubernetes/troubleshooting/docker-volume-mounts-and-autofs.md
         - Pod Tolerates Node Taints: docs/topics/kubernetes/troubleshooting/pod_tolerates_node_taints.md
+   - pfSense:
+      - troubleshooting: 
+        - Boot failure after upgrading pfsense to 2.4.0: docs/topics/pfsense/troubleshooting/boot-failure-after-upgrade-to-2-4-0.md
+   - Terraform:
+      - lessons:
+        - lesson-01: docs/topics/terraform/lesson-01/lesson.md    
    - About MkDocs:
       - Overview: docs/about-mkdocs.md
       - Quickstart: docs/tutorial/quickstart.md

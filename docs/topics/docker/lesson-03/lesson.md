@@ -1,0 +1,1 @@
+{{external_markdown("../../bert.lessons/docker/lesson-03/lesson.md")}}

@@ -1,0 +1,1 @@
+{{external_markdown("../../bert.lessons/crossplane/lesson-02/lesson.md")}}
