@@ -1,6 +1,6 @@
 ## About Me
 
-Howdy. 
+Howdy.
 
 My name is Bert. 
 
@@ -23,8 +23,9 @@ languages such as [Python](https://www.python.org/),
 and [Ruby](https://www.ruby-lang.org/en/).
 
 For shell scripting on POSIX-compliant systems, 
-I mostly use [Bash](https://www.gnu.org/software/bash/), but I
-can wield a heavy sword on Windows with 
+I mostly use [Bash](https://www.gnu.org/software/bash/) 
+and [zsh](https://www.zsh.org/), 
+but I can get pretty crafty on Windows with 
 [PowerShell](https://docs.microsoft.com/en-us/powershell/) and even
 [BATCH](https://en.wikipedia.org/wiki/Batch_file).
 
@@ -56,8 +57,8 @@ Microservices and Virtualization? Oh yeah!:
 
 But wait, there's more: 
 
-I'm all about that [Jenkins](https://www.jenkins.io/)
-for Continuous Integration, and I love love love these 
+I'm all about that [Jenkins](https://www.jenkins.io/) and [Argo CD](https://argo-cd.readthedocs.io/en/stable/)
+for Continuous Integration/Continuous Delivery (CI/CD), and I love, love, love these 
 Atlassian Products:
 
 - [JIRA](https://www.atlassian.com/software/jira)
@@ -66,10 +67,10 @@ Atlassian Products:
 
 ## My Tech Notes
 
-All of my notes are organized by main topic and tags.
+All of my notes are organized by main topic.
 
 You can use the search bar up top for real-time search results or 
 click the hamburger menu at the top left to navigate 
-through main topics.
+through a given topic.
 
-Enjoy!
+Enjoy, and happy learning!
