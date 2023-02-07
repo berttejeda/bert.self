@@ -9,7 +9,7 @@ and I'm sure I'm a pretty regular guy (for now).
 
 My trade is tech, with a specialty in Cloud Architecture,
 Systems Administration/Orchestration, and everything that ships with
-DevOps methodoligies, which includes 
+DevOps methodologies, which includes 
 Desired State and Configuration Management, 
 among other buzzwordy terms.
 
@@ -24,10 +24,10 @@ among other buzzwordy terms.
 ## My work
 
 - 🔭 Currently working on [bert.bill](https://github.com/berttejeda/bert.bill) (personal project for helping others learn new technologies).
-- 🌱 Currently honing my skils in:
+- 🌱 Currently honing my skills in:
   - [React](https://reactjs.org/docs/getting-started.html)
   - [Terraform](https://www.terraform.io/)
-  - [ProxMox](https://www.terraform.io/)
+  - [Proxmox](https://www.proxmox.com)
   - [AWS](https://docs.aws.amazon.com/)
 
 Feel free to peruse the rest of my free and opensource projects on [github](https://github.com/berttejeda).
@@ -72,7 +72,7 @@ Microservices and Virtualization? Oh yeah!:
 - [Rancher](https://rancher.com/)
 - [Docker](https://www.docker.com/)
 - [Ovirt](https://www.ovirt.org/)/[RHEV](https://www.redhat.com/en/technologies/virtualization/enterprise-virtualization)
-- [ProxMox](https://www.proxmox.com/en/)
+- [Proxmox](https://www.proxmox.com/en/)
 - [VMware](https://www.vmware.com)
 
 But wait, there's more: 
