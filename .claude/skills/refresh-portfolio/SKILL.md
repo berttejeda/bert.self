@@ -144,5 +144,6 @@ couldn't verify. Don't commit unless the user asks.
   `declare_variables` hook only runs because `define_env` calls it.
 - **Home page.** The home page is `index.md`. `README.md` is excluded via `exclude_docs`, so
   don't point nav at it.
-- **Docker lessons.** These pages are stubs with no source in `bert.lessons`, so they're kept
-  out of nav and out of the build (`exclude_docs`) until that content exists.
+- **Lesson stubs.** Pages under `docs/topics/*/lesson-*/` only render if their source exists
+  in `bert.lessons`. The Docker lessons were once live with no committed source, and had to be
+  recovered from the `gh-pages` HTML in 2026. Commit lesson content to `bert.lessons` first.

@@ -39,7 +39,7 @@ engineers I work with. Most of it is open source, and much of it ships on PyPI.
 
     ---
 
-    Hands-on lessons for Ansible, Kubernetes, Crossplane and Terraform — plus the platform to run them.
+    Hands-on lessons for Ansible, Docker, Kubernetes, Crossplane and Terraform — plus the platform to run them.
 
 </div>
 

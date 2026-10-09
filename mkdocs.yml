@@ -22,8 +22,6 @@ exclude_docs: |
   __pycache__/
   requirements.txt
   Dockerfile
-  # Stubs whose source no longer exists in bert.lessons; re-include once it does
-  docs/topics/docker/
 
 ### global variables ###
 extra:
@@ -145,6 +143,11 @@ nav:
       - Ansible:
          - Lesson 01: docs/topics/ansible/lesson-01/lesson.md
          - Portable Ansible on Windows 7 (Cygwin): docs/topics/ansible/windows/ansible-on-windows-7-with-cygwin.md
+      - Docker:
+         - Lesson 01: docs/topics/docker/lesson-01/lesson.md
+         - Lesson 02: docs/topics/docker/lesson-02/lesson.md
+         - Lesson 03: docs/topics/docker/lesson-03/lesson.md
+         - Lesson 04: docs/topics/docker/lesson-04/lesson.md
       - Crossplane:
          - Lesson 01: docs/topics/crossplane/lesson-01/lesson.md
          - Lesson 02: docs/topics/crossplane/lesson-02/lesson.md

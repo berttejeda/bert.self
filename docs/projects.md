@@ -50,7 +50,7 @@ I spend a lot of time helping other engineers get up to speed, so I build tools 
 | [bert.dashboard](https://github.com/berttejeda/bert.dashboard) | Interactive lessons written in Markdown and templated with Jinja, plus an embedded web terminal. On [PyPI](https://pypi.org/project/btdashboard/). | React, Flask | 45 commits |
 | [bert.bill](https://github.com/berttejeda/bert.bill) | Bert's Interactive Lesson Loader, the predecessor to bert.dashboard. Now archived. On [PyPI](https://pypi.org/project/bertdotbill/). | React, Flask | 105 commits · 34 releases |
 | [bert.webterminal](https://github.com/berttejeda/bert.webterminal) | A WebSocket agent that connects xterm.js front ends to a local shell. Shipped as a Docker image and on [PyPI](https://pypi.org/project/btwebterminal/). | Python, Docker | 2022–2026 |
-| [bert.lessons](https://github.com/berttejeda/bert.lessons) | Hands-on lessons for Ansible, Kubernetes, Crossplane and Terraform. These power the [Notes](notes.md) section of this site. | Markdown, HCL | 47 commits |
+| [bert.lessons](https://github.com/berttejeda/bert.lessons) | Hands-on lessons for Ansible, Docker, Kubernetes, Crossplane and Terraform. These power the [Notes](notes.md) section of this site. | Markdown, HCL | 47 commits |
 | [bert.slidev](https://github.com/berttejeda/bert.slidev) | Slidev add-ons, including a web-terminal add-on for live demos. | Vue, TypeScript | 2026 |
 | [bert.docs](https://github.com/berttejeda/bert.docs) | Interactive HTA documents built from Markdown with Pandoc, with embedded PowerShell and cmd execution. | HTML, PowerShell | ★ 13 |
 
