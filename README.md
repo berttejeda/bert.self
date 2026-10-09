@@ -3,6 +3,9 @@
 Source for [bertdotself.com](https://bertdotself.com), the personal site of Bert Tejeda:
 a professional portfolio plus my technical notes and lessons.
 
+The site is hosted on GitHub Pages at <https://berttejeda.github.io/bert.self/>.
+`bertdotself.com` is registered with Squarespace and redirects there.
+
 It's built with [MkDocs](https://www.mkdocs.org/) and the
 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme.
 
@@ -51,6 +54,81 @@ docker build -t bert.self -f docs/Dockerfile docs
 ```bash
 docker run --rm -p 8000:8000 -v "$PWD":/docs -v "$PWD/../bert.lessons":/bert.lessons bert.self
 ```
+
+## Publishing to GitHub Pages
+
+### How hosting is set up
+
+- **Pages source:** GitHub Pages serves the root of the **`gh-pages`** branch in
+  "Deploy from a branch" mode (*Settings → Pages*). There is no Actions workflow.
+- **What `gh-pages` holds:** only the built static site. Never edit it by hand.
+- **Domain:** there's no custom domain, so there's no `CNAME` file. `bertdotself.com` reaches the
+  site through a Squarespace redirect, which is managed in Squarespace, not here.
+- **`site_url`:** it's set in [mkdocs.yml](mkdocs.yml) to the github.io URL, so the sitemap and
+  canonical links match where the site is actually served.
+
+### Deploy
+
+Publish from an up-to-date `main` with a clean working tree:
+
+```bash
+git switch main && git pull --ff-only
+```
+
+Make sure the [bert.lessons](#lessons-from-bertlessons) checkout is present and current.
+Otherwise the lesson pages will publish as "File not found":
+
+```bash
+git -C ../bert.lessons pull --ff-only
+```
+
+Build once to check for errors before anything is pushed:
+
+```bash
+mkdocs build
+```
+
+Then deploy:
+
+```bash
+mkdocs gh-deploy -m "Deploy {sha} with MkDocs {version}"
+```
+
+`mkdocs gh-deploy` does the following:
+
+1. Rebuilds `site/` from a clean state.
+2. Commits it to the local `gh-pages` branch as a new commit on top of the existing history,
+   replacing the whole tree and adding `.nojekyll`. `{sha}` in the message expands to the
+   `main` commit that was deployed.
+3. Pushes `gh-pages` to `origin`.
+
+GitHub Pages usually rebuilds within a minute or two. To check the Pages build status:
+
+```bash
+gh api repos/berttejeda/bert.self/pages --jq .status
+```
+
+To see which `main` commit is live:
+
+```bash
+git log -1 --format=%s origin/gh-pages
+```
+
+### Rolling back
+
+Re-deploy an older version by checking out that commit of `main` and running `gh-deploy`
+again. Alternatively, revert the latest commit on `gh-pages` and push it:
+
+```bash
+git switch gh-pages && git revert --no-edit HEAD && git push origin gh-pages && git switch main
+```
+
+### History
+
+Before 2026, deploys were done by hand: build `site/`, copy it onto the `gh-pages` branch and
+commit it as "Refreshed site". Those deploys also published build tooling, such as
+`docs/macros.py` and `__pycache__`. Those files are now kept out with `exclude_docs`.
+`mkdocs gh-deploy` replaces that manual process and builds on the same branch history.
 
 ## Lessons from bert.lessons
 
@@ -105,6 +183,22 @@ Without that checkout, the build still succeeds, but lesson pages show a "File n
 - **`cheat_page` macro.** It needs the Bootstrap/DataTables assets in `docs/theme/`. These
   aren't loaded globally because they override Material's styles, so include them only on
   pages that use the macro.
+
+## Agent skills
+
+Two Claude Code skills in [.claude/skills/](.claude/skills) automate upkeep:
+
+- **[refresh-portfolio](.claude/skills/refresh-portfolio/SKILL.md)** re-collects GitHub and PyPI
+  data and updates `index.md`, `docs/projects.md` and `docs/activity.md`.
+- **[publish-site](.claude/skills/publish-site/SKILL.md)** runs the pre-deploy checks in
+  [scripts/preflight.sh](.claude/skills/publish-site/scripts/preflight.sh), deploys with
+  `mkdocs gh-deploy` once you confirm, and verifies the live site.
+
+You can also run the preflight on its own before a manual deploy:
+
+```bash
+.claude/skills/publish-site/scripts/preflight.sh
+```
 
 ## Contact
 

@@ -3,7 +3,8 @@
 site_name: Bert Tejeda
 site_description: DevOps & Platform Engineer — infrastructure as code, automation tooling, and open-source developer experience
 site_author: Bert Tejeda
-site_url: https://bertdotself.com/
+# Served by GitHub Pages from the gh-pages branch; bertdotself.com redirects here
+site_url: https://berttejeda.github.io/bert.self/
 
 repo_url: https://github.com/berttejeda/bert.self
 repo_name: berttejeda/bert.self
@@ -13,9 +14,16 @@ dev_addr: '0.0.0.0:8000'
 docs_dir: .
 site_dir: site
 
-# README.md documents the repo itself; index.md is the site's home page
+# README.md documents the repo itself; index.md is the site's home page.
+# docs_dir is the repo root, so keep build tooling out of the published site too.
 exclude_docs: |
   README.md
+  *.py
+  __pycache__/
+  requirements.txt
+  Dockerfile
+  # Stubs whose source no longer exists in bert.lessons; re-include once it does
+  docs/topics/docker/
 
 ### global variables ###
 extra:
