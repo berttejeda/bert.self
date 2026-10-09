@@ -1,96 +1,113 @@
-## About Me
+# bert.self
 
-Howdy.
+Source for [bertdotself.com](https://bertdotself.com), the personal site of Bert Tejeda:
+a professional portfolio plus my technical notes and lessons.
 
-My name is Bert. 
+It's built with [MkDocs](https://www.mkdocs.org/) and the
+[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme.
 
-I am a dedicated father and husband, 
-and I'm sure I'm a pretty regular guy (for now).
+## Site contents
 
-My trade is tech, with a specialty in Cloud Architecture,
-Systems Administration/Orchestration, and everything that ships with
-DevOps methodologies, which includes 
-Desired State and Configuration Management, 
-among other buzzwordy terms.
+| Page | Source | What it covers |
+|---|---|---|
+| Home | [index.md](index.md) | Summary, highlights, featured projects and skills |
+| Projects | [docs/projects.md](docs/projects.md) | Open-source portfolio grouped by theme |
+| Activity | [docs/activity.md](docs/activity.md) | Year-by-year GitHub contribution timeline |
+| Notes | [docs/notes.md](docs/notes.md), [docs/topics/](docs/topics) | Lessons and troubleshooting write-ups |
 
-## My passions
+This `README.md` is excluded from the site build (`exclude_docs` in [mkdocs.yml](mkdocs.yml)),
+so it only documents the repository.
 
-- Technology
-- Education
-- Good, solid, parenting
-- Child welfare - Become a Big at [Big Brothers Big Sisters](https://www.bbbs.org/)!
-- Saving the planet by **Composting**! - See my notes [here](https://github.com/berttejeda/bert.composting) 
+## Quick start
 
-## My work
+Requires Python 3.9+.
 
-- 🔭 Currently working on [bert.bill](https://github.com/berttejeda/bert.bill) (personal project for helping others learn new technologies).
-- 🌱 Currently honing my skills in:
-  - [React](https://reactjs.org/docs/getting-started.html)
-  - [Terraform](https://www.terraform.io/)
-  - [Proxmox](https://www.proxmox.com)
-  - [AWS](https://docs.aws.amazon.com/)
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
 
-Feel free to peruse the rest of my free and opensource projects on [github](https://github.com/berttejeda).
+Preview locally with live reload at <http://localhost:8000>:
 
-You can also reach me on [LinkedIn](https://www.linkedin.com/in/engelberttejeda/).
+```bash
+mkdocs serve
+```
 
-## My tech stack
+Build the static site into `site/`:
 
-I absolutely love [DevOps](https://en.wikipedia.org/wiki/DevOps) 
-and am forever a student of programming 
-languages such as [Python](https://www.python.org/),
-[PowerShell](https://docs.microsoft.com/en-us/powershell/),
-[Go](https://go.dev/),
-and [Ruby](https://www.ruby-lang.org/en/).
+```bash
+mkdocs build
+```
 
-For shell scripting on POSIX-compliant systems, 
-I mostly use [Bash](https://www.gnu.org/software/bash/) 
-and [zsh](https://www.zsh.org/), 
-but I can get pretty crafty on Windows with 
-[PowerShell](https://docs.microsoft.com/en-us/powershell/) and even
-[BATCH](https://en.wikipedia.org/wiki/Batch_file).
+### Docker
 
-My Web skills include:
+The image under [docs/](docs) installs the same requirements and runs `mkdocs serve`:
 
-- Frontend Development
-    - [React](https://reactjs.org/), 
-    - [CSS](https://www.w3schools.com/css/)
-    - Good ol' [javascript](https://www.javascript.com/) 
-- Backend/API Development
-    - [Flask](https://flask.palletsprojects.com)
-    - [nodejs](https://nodejs.org/en/)
+```bash
+docker build -t bert.self -f docs/Dockerfile docs
+```
 
-My goto for infrastructure orchestration and platform tooling is 
-[Ansible](https://www.ansible.com/). 
+```bash
+docker run --rm -p 8000:8000 -v "$PWD":/docs -v "$PWD/../bert.lessons":/bert.lessons bert.self
+```
 
-For Infrastructure as Code (IaC), 
-I use [Terraform](https://www.terraform.io/).
+## Lessons from bert.lessons
 
-Microservices and Virtualization? Oh yeah!:
+The lesson pages under `docs/topics/*/lesson-*/` are stubs that pull their content from a
+sibling checkout of [bert.lessons](https://github.com/berttejeda/bert.lessons) at build time,
+using the `external_markdown` macro in [docs/macros.py](docs/macros.py):
 
-- [Kubernetes](https://kubernetes.io/)
-- [Rancher](https://rancher.com/)
-- [Docker](https://www.docker.com/)
-- [Ovirt](https://www.ovirt.org/)/[RHEV](https://www.redhat.com/en/technologies/virtualization/enterprise-virtualization)
-- [Proxmox](https://www.proxmox.com/en/)
-- [VMware](https://www.vmware.com)
+```text
+git/self/
+├── bert.self/      # this repo
+└── bert.lessons/   # required for lesson pages to render
+```
 
-But wait, there's more: 
+```bash
+git clone https://github.com/berttejeda/bert.lessons.git ../bert.lessons
+```
 
-I'm all about that [Jenkins](https://www.jenkins.io/) and [Argo CD](https://argo-cd.readthedocs.io/en/stable/)
-for Continuous Integration/Continuous Delivery (CI/CD), and I love, love, love these 
-Atlassian Products:
+Without that checkout, the build still succeeds, but lesson pages show a "File not found" message.
 
-- [JIRA](https://www.atlassian.com/software/jira)
-- [Confluence](https://www.atlassian.com/software/confluence)
-- [Bitbucket](https://www.atlassian.com/software/bitbucket)
+## Project layout
 
-## My Tech Notes
+```text
+.
+├── index.md            # site home page
+├── mkdocs.yml          # site config, theme and navigation
+├── requirements.txt    # Python dependencies (also copied to docs/requirements.txt for Docker)
+└── docs/
+    ├── projects.md     # portfolio
+    ├── activity.md     # contribution timeline
+    ├── notes.md        # notes landing page
+    ├── topics/         # notes and lesson stubs, by topic
+    ├── tutorial/       # notes on MkDocs itself
+    ├── macros.py       # mkdocs-macros: external_markdown, cheat_page, video, etc.
+    └── theme/          # logo and optional CSS/JS assets
+```
 
-All of my notes are organized by main topic.
+## Maintenance notes
 
-You can use the search bar up top for real-time search results or 
-click the hamburger menu at the top left to navigate 
-through a given topic.
+- **Stay on MkDocs 1.x.** MkDocs 2.0 removes the plugin and theme system this site relies on,
+  so `requirements.txt` pins `mkdocs<2`. To hide Material's upgrade warning, set
+  `DISABLE_MKDOCS_2_WARNING=true`.
+- **Adding a page.** Create the Markdown file and add it under `nav:` in `mkdocs.yml`.
+  Pages missing from `nav` still build, but they're hidden from the menus.
+- **Refreshing portfolio stats.** The figures in `index.md`, `docs/projects.md` and
+  `docs/activity.md` came from the GitHub API and PyPI, and are current as of October 2026.
+  For example:
 
-Enjoy, and happy learning!
+    ```bash
+    gh repo list berttejeda --limit 300 --source --json name,stargazerCount,pushedAt
+    ```
+
+- **`cheat_page` macro.** It needs the Bootstrap/DataTables assets in `docs/theme/`. These
+  aren't loaded globally because they override Material's styles, so include them only on
+  pages that use the macro.
+
+## Contact
+
+[GitHub](https://github.com/berttejeda) ·
+[LinkedIn](https://www.linkedin.com/in/engelberttejeda/) ·
+[berttejeda@gmail.com](mailto:berttejeda@gmail.com)

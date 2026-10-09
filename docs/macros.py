@@ -118,6 +118,9 @@ def is_absolute(url):
 def define_env(env):
     "Hook function"
 
+    # mkdocs-macros no longer calls the legacy declare_variables hook on its own
+    declare_variables(env.variables, env.macro)
+
     @env.macro
     def test_fn(x:float):
         "Test function"

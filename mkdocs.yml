@@ -1,21 +1,40 @@
 ### Site metadata ###
 
-site_name: bert.self
-site_description: Notes from my career in IT thus far
-site_url:
+site_name: Bert Tejeda
+site_description: DevOps & Platform Engineer — infrastructure as code, automation tooling, and open-source developer experience
+site_author: Bert Tejeda
+site_url: https://bertdotself.com/
 
-repo_url:
+repo_url: https://github.com/berttejeda/bert.self
+repo_name: berttejeda/bert.self
 edit_uri:
 dev_addr: '0.0.0.0:8000'
 
 docs_dir: .
 site_dir: site
 
+# README.md documents the repo itself; index.md is the site's home page
+exclude_docs: |
+  README.md
+
 ### global variables ###
 extra:
   globals:
     self:
       email: berttejeda@gmail.com
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/berttejeda
+      name: GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/engelberttejeda/
+      name: LinkedIn
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/user/berttejeda/
+      name: PyPI
+    - icon: fontawesome/solid/envelope
+      link: mailto:berttejeda@gmail.com
+      name: Email
 
 ### Build settings ###
 
@@ -23,21 +42,26 @@ theme:
   name: material
   palette:
   - scheme: default
-    toggle:
-      icon: material/weather-sunny
-      name: Switch to light mode
-  - scheme: slate
+    primary: indigo
+    accent: teal
     toggle:
       icon: material/weather-night
       name: Switch to dark mode
+  - scheme: slate
+    primary: indigo
+    accent: teal
+    toggle:
+      icon: material/weather-sunny
+      name: Switch to light mode
   #favicon: img/favicon.ico
-  search_index_only: true
-  include_search_page: true
   features:
     - search.suggest
     - search.highlight
-    #- navigation.sections
-    #- content.code.annotate      
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - content.code.copy
   logo: docs/theme/images/logo.jpg
   icon:
     repo: fontawesome/brands/github-alt
@@ -58,31 +82,22 @@ theme:
       text: Ubuntu
       code: Source Code Pro 
 
-extra_css:
- - docs/theme/css/bootstrap.min.css
- - docs/theme/css/dataTables.bootstrap5.min.css
- - docs/theme/css/codecopy.css
- - docs/theme/js/cheatdata.css
+# Bootstrap/DataTables assets (docs/theme) are only needed by the cheat_page macro;
+# include them per page if that macro is used, since they override Material's styles.
 
-extra_javascript:
- - docs/theme/js/jquery-3.3.1.slim.min.js
- - docs/theme/js/popper.min.js
- - docs/theme/js/jquery.dataTables.min.js
- - docs/theme/js/cheatdata.js
- - docs/theme/js/d3.min.js
- - docs/theme/js/mermaid.min.js
- - docs/theme/js/markmap-lib/index.min.js
- - docs/theme/js/markmap-view/index.min.js
 
 markdown_extensions:
+  - admonition
   - attr_list
-  - markdown_blockdiag:
-      format: svg  
+  - md_in_html
   - codehilite
   - footnotes
-  - lightgallery
-  - markdown_include.include:
-      base_path: .
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.keys
   - pymdownx.magiclink
   - pymdownx.mark
@@ -105,14 +120,6 @@ markdown_extensions:
       permalink: true
 
 plugins:
-  - diagrams
-  - markmap:
-      base_path: docs
-      encoding: utf-8
-      file_extension: .mm.md
-      d3_version: 6.7.0
-      lib_version: 0.11.6
-      view_version: 0.2.6    
   - mermaid2
   - macros:
       module_name: docs/macros
@@ -120,47 +127,34 @@ plugins:
   - same-dir
   - search:
       lang: ["en"]
-      prebuild_index: false
       
 nav:
-   - Home: README.md
-   # - Automation:
-   #    - bash: docs/topics/automation/bash.md
-   #    - python: docs/topics/automation/python.md
-   - Ansible:
-      - lessons:
-        - lesson-01: docs/topics/ansible/lesson-01/lesson.md
-      - windows: 
-        - Portable Ansible Installation on Windows 7 using Cygwin: docs/topics/ansible/windows/ansible-on-windows-7-with-cygwin.md
-   - Docker:
-      - lessons:
-        - lesson-01: docs/topics/docker/lesson-01/lesson.md    
-        - lesson-02: docs/topics/docker/lesson-02/lesson.md    
-        - lesson-03: docs/topics/docker/lesson-03/lesson.md    
-        - lesson-04: docs/topics/docker/lesson-04/lesson.md
-   - Crossplane:
-      - lessons:
-        - lesson-01: docs/topics/crossplane/lesson-01/lesson.md
-        - lesson-02: docs/topics/crossplane/lesson-02/lesson.md
-   - Kubernetes:
-      - lessons:
-        - lesson-01: docs/topics/kubernetes/lesson-01/lesson.md
-        - lesson-02: docs/topics/kubernetes/lesson-02/lesson.md        
-      - troubleshooting: 
-        - Docker Volume Mounts And Autofs: docs/topics/kubernetes/troubleshooting/docker-volume-mounts-and-autofs.md
-        - Pod Tolerates Node Taints: docs/topics/kubernetes/troubleshooting/pod_tolerates_node_taints.md
-   - pfSense:
-      - troubleshooting: 
-        - Boot failure after upgrading pfsense to 2.4.0: docs/topics/pfsense/troubleshooting/boot-failure-after-upgrade-to-2-4-0.md
-   - Terraform:
-      - lessons:
-        - lesson-01: docs/topics/terraform/lesson-01/lesson.md    
-   - About MkDocs:
-      - Overview: docs/about-mkdocs.md
-      - Quickstart: docs/tutorial/quickstart.md
-      - TL;DR: docs/tutorial/tldr.md
-      - Installation: docs/tutorial/installation.md
-      - Set up project: docs/tutorial/setup-project.md
-      - Advanced: docs/tutorial/advanced.md
-      - Usage: docs/tutorial/usage.md
-      - Deploy: docs/tutorial/deploy.md
+   - Home: index.md
+   - Projects: docs/projects.md
+   - Activity: docs/activity.md
+   - Notes:
+      - docs/notes.md
+      - Ansible:
+         - Lesson 01: docs/topics/ansible/lesson-01/lesson.md
+         - Portable Ansible on Windows 7 (Cygwin): docs/topics/ansible/windows/ansible-on-windows-7-with-cygwin.md
+      - Crossplane:
+         - Lesson 01: docs/topics/crossplane/lesson-01/lesson.md
+         - Lesson 02: docs/topics/crossplane/lesson-02/lesson.md
+      - Kubernetes:
+         - Lesson 01: docs/topics/kubernetes/lesson-01/lesson.md
+         - Lesson 02: docs/topics/kubernetes/lesson-02/lesson.md
+         - Docker Volume Mounts and Autofs: docs/topics/kubernetes/troubleshooting/docker-volume-mounts-and-autofs.md
+         - Pod Tolerates Node Taints: docs/topics/kubernetes/troubleshooting/pod_tolerates_node_taints.md
+      - pfSense:
+         - Boot Failure After Upgrading to 2.4.0: docs/topics/pfsense/troubleshooting/boot-failure-after-upgrade-to-2-4-0.md
+      - Terraform:
+         - Lesson 01: docs/topics/terraform/lesson-01/lesson.md
+      - About This Site (MkDocs):
+         - Overview: docs/about-mkdocs.md
+         - Quickstart: docs/tutorial/quickstart.md
+         - TL;DR: docs/tutorial/tldr.md
+         - Installation: docs/tutorial/installation.md
+         - Set up project: docs/tutorial/setup-project.md
+         - Advanced: docs/tutorial/advanced.md
+         - Usage: docs/tutorial/usage.md
+         - Deploy: docs/tutorial/deploy.md
